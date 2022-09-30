@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de Películas</title>
-    <link rel='stylesheet' href='/css/style.css' />
-
-</head>
-<%- include('./partials/header.ejs') %> 
+    <%- include('./partials/head.ejs') %> 
+    <%- include('./partials/header.ejs') %> 
 <body>
     <figure>
         <img src="/img/logo-DH.png" alt="Logo Digital House">
     </figure>
+    <h1>AGREGAR PELICULA</h1> <br> <button class="btn btn-primary"><a  class="link-light" href="/movies/add">Agregar Película</a></button> <br> <br> 
     <h1>LISTADO DE PELÍCULAS</h1>
     <ul>
         <% for( let i = 0; i < movies.length; i++ ) { %>
         <li>
-            <a href="/movies/detail/<%= movies[i].id %>"><%= movies[i].title %></a>
+            <a href="/movies/detail/<%= movies[i].id %>">
+                <% if (movies[i].genres) { %>
+                    <%= movies[i].title %> - <%= movies[i].genres.name  %>
+               
+                    <% } else { %>
+                        <%= movies[i].title %>
+                    <% } %>
+               </a>
         </li>
         <% } %>
 

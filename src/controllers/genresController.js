@@ -17,8 +17,8 @@ module.exports = {
     },
     detail : (req,res) => {
         db.Genre.findByPk(req.params.id)
-        .then(genre => res.render('genresDetail', {
-            genre
+        .then(genres => res.render('genresDetail', {
+            genres
         }))
         .catch(error => console.log(error))
     }

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include('./partials/head.ejs') %> 
+<%- include('./partials/header.ejs') %> 
+
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+      </figure>
+    <h1 class="titulo">Película a Editar:  <%= Movie.title %></h1>
+    <section class="formulario">
+        <form action="/movies/update/<%= Movie.id %>?_method=PUT"  method="POST">
+            <div class="form-group">
+            <label for="title">Title </label>
+            <input class="form-control" type="text" name="title" id="title" value="<%= Movie.title %>">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="rating">Rating </label>
+                <input class="form-control" type="number" name="rating" id="rating" value="<%= Movie.rating %>">
+            </div>
+            <br>
+            <div class="form-group">
+            <label for="awards">Awards </label>
+            <input class="form-control" type="number" name="awards" id="awards" value="<%= Movie.awards %>">
+            </div>
+            <br>
+            <div class="form-group">
+            <label for="release_date">Release date </label>
+            <input class="form-control" type="date" name="release_date" id="release_date" value="<%= dayjs(Movie.release_date).format('YYYY-MM-DD') %>">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="length">Length </label>
+            <input class="form-control" type="number" name="length" id="" value="<%= Movie.length %>">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="genre_id">Generos</label>
+            <select class="form-control" name="genre_id" id="genre_id">
+                <option value="" hidden selected>Selecione Genero</option>
+                <% genres.forEach(genre => { %>
+                 <option value="<%= genre.id %>" <%= genre.id === Movie.genre_id && 'selected' %>><%= genre.name %></option>
+                <% }) %>
+            </select>
+            </div>
+            <br><br>
+            <button class="btn btn-primary" type="submit">Actualizar</button>
+        
+            <button type="submit" class="btn btn-primary"><a  class="link-light" href="/movies">Listado de Películas</a></button>
+        </form>
+    </section>
+</body>
+
+</html>

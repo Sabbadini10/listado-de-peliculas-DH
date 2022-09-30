@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= movie.title %> </title>
-    <link rel='stylesheet' href='/css/style.css' />
-
-</head>
-<%- include('./partials/header.ejs') %> 
+    <%- include('./partials/head.ejs') %> 
+    <%- include('./partials/header.ejs') %> 
 <body>
     <figure>
         <img src="/img/logo-DH.png" alt="Logo Digital House">
@@ -18,6 +12,10 @@
     <p>AWARDS: <%= movie.awards %> </p>
     <p>LENGTH: <%= movie.length + ' min'%> </p>
     <p>RELEASE DATE: <%= movie.release_date %> </p>
+    <br>
+    
+    <button class="btn btn-primary"><a  class="link-light" href="/movies/edit/<%= movie.id%>">Editar Pelicula</a></button>
+    <button class="btn btn-primary"><a  class="link-light" href="/movies/delete/<%= movie.id%>">Eliminar Pelicula</a></button>
 
 </body>
 </html>
