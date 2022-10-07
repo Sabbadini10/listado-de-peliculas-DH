@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include('./partials/head.ejs') %> 
+<%- include('./partials/header.ejs') %> 
+
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+      </figure>
+    <h1 class="titulo">Genero a Editar:  <%= actors.name %></h1>
+    <section class="formulario">
+        <form action="/actors/update/<%= actors.id %>?_method=PUT"  method="POST">
+            <div class="form-group">
+            <label for="first_name">Nombre</label>
+            <input class="form-control" type="text" name="first_name" id="first_name" value="<%= actors.first_name %>">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="last_name">Apellido</label>
+                <input class="form-control" type="text" name="last_name" id="last_name" value="<%= actors.last_name %>">
+                </div>
+                <br/>
+            <div class="form-group">
+                <label for="rating">Raiting</label>
+                <input class="form-control" type="number" name="rating" id="rating" value="<%= actors.rating %>">
+            </div>
+            <br>
+            <button class="btn btn-primary" type="submit">Actualizar</button>
+        
+            <button type="submit" class="btn btn-dark"><a  class="link-light" href="/actors">Listado de Generos</a></button>
+        </form>
+    </section>
+</body>
+
+</html>

@@ -9,19 +9,19 @@
     </figure>
     <h1>AGREGAR PELICULA</h1> <br> <button class="btn btn-primary"><a  class="link-light" href="/movies/add">Agregar Película</a></button> <br> <br> 
     <h1>LISTADO DE PELÍCULAS</h1>
-    <ul>
-        <% for( let i = 0; i < movies.length; i++ ) { %>
-        <li>
-            <a href="/movies/detail/<%= movies[i].id %>">
-                <% if (movies[i].genres) { %>
-                    <%= movies[i].title %> - <%= movies[i].genres.name  %>
-               
-                    <% } else { %>
-                        <%= movies[i].title %>
-                    <% } %>
-               </a>
-        </li>
-        <% } %>
+        <ul class="list-group" style="width: 100%;">
+            <% for( let i = 0; i < movies.length; i++ ) { %>
+            <li class="list-group-item">
+                <a  href="/movies/detail/<%= movies[i].id %>">
+                    <% if (movies[i].genres) { %>
+                        <%= movies[i].title %> - <%= movies[i].genres.name %>
+                   
+                        <% } else { %>
+                            <%= movies[i].title %> - No tiene genero &#128557                      
+                            <% } %>
+                   </a>
+            </li>
+            <% } %>
 
     </ul>
 </body>

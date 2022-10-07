@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head.ejs') %>
+    <%- include('./partials/header.ejs') %>
+
+        <body>
+            <figure>
+                <img src="/img/logo-DH.png" alt="Logo Digital House" />
+            </figure>
+            <h1 class="titulo">Agregar Actor</h1>
+            <br />
+            <section class="formulario">
+                <form action="/actors/create" method="POST">
+                    <div class="form-group">
+                        <label for="first_name">Nombre</label>
+                        <input class="form-control" type="text" name="first_name"
+                            value="<%= locals.old && old.first_name ? old.first_name : null %>" id="first_name" />
+                        <small class="text-danger">
+                            <%= locals.errors && errors.first_name ? errors.first_name.msg :null %>
+                        </small>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label for="last_name">Apellido</label>
+                        <input class="form-control" type="text" name="last_name" id="last_name"
+                            value="<%= locals.old && old.last_name ? old.last_name : null %>" />
+                        <small class="text-danger">
+                            <%= locals.errors && errors.last_name ? errors.last_name.msg :null %>
+                        </small>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label for="rating">Raiting </label>
+                        <input class="form-control" type="number" name="rating" id="rating"
+                            value="<%= locals.old && old.rating ? old.rating : null %>" />
+                        <small class="text-danger">
+                            <%= locals.errors && errors.rating ? errors.rating.msg :null %>
+                        </small>
+                    </div> 
+                    <br />
+                    <br />
+                    <p>
+                        <button class="btn btn-primary" type="submit">Agregar</button>
+
+                        <button class="btn btn-dark" type="submit">
+                            <a class="link-light" href="/actors">Listado de Actores</a>
+                        </button>
+                    </p>
+                </form>
+            </section>
+        </body>
+
+</html>

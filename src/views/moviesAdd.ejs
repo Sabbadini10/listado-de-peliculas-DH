@@ -12,36 +12,41 @@
     <section class="formulario">
         <form action="/movies/create" method="POST">
             <div class="form-group">
-                <label for="title">Title </label>
+                <label for="title">Titulo</label>
             <input class="form-control" type="text" name="title" value="<%= locals.old && old.title ? old.title : null %>" id="title">
             <small class="text-danger"><%= locals.errors && errors.title ? errors.title.msg :null %></small>
         </div>
+        <br>
             <div class="form-group">
-            <label for="rating">Rating </label>
+            <label for="rating">Raiting </label>
             <input class="form-control" type="number" name="rating" id="rating" value="<%= locals.old && old.rating ? old.rating : null %>">
             <small class="text-danger"><%= locals.errors && errors.rating ? errors.rating.msg :null %></small>
             </div>
+            <br>
             <div class="form-group">
-                <label for="awards">Awards </label>
+                <label for="awards">Premios </label>
                 <input class="form-control" type="number" name="awards" id="awards" value="<%= locals.old && old.awards ? old.awards : null %>">
 <small class="text-danger"><%= locals.errors && errors.awards ? errors.awards.msg :null %></small>
             </div>
+            <br>
             <div class="form-group">
-                <label for="release_date">Release date </label>
+                <label for="release_date">Fecha de lanzamiento</label>
                 <input class="form-control" type="date" name="release_date" id="release_date" value="<%= locals.old && old.release_date ? old.release_date : null %>">
 <small class="text-danger"><%= locals.errors && errors.release_date ? errors.release_date.msg :null %></small>
             </div>
+            <br>
             <div class="form-group">
-                <label for="length">Length </label>
+                <label for="length">Duracion</label>
             <input class="form-control" type="number" name="length" id="length" value="<%= locals.old && old.length ? old.length : null %>">
 <small class="text-danger"><%= locals.errors && errors.length ? errors.length.msg :null %></small>
             </div>
+            <br>
             <div class="form-group">
                 <label for="genre_id">Generos</label>
                 <select class="form-control" name="genre_id" id="genre_id" value="<%= locals.old && old.genre_id ? old.genre_id : null %>">
-                    <option hidden selected>Selecione Genero</option>
+                    <option  hidden selected>Selecione Genero</option>
                     <% genres.forEach(genres => { %>
-                     <option value="<%= genres.id %>"><%= genres.name %></option>
+                     <option style="box-shadow: 1px 1px 1px 1px rgba(1,0,0,.03);background-color: grey; color: aliceblue;" value="<%= genres.id %>"><%= genres.name %></option>
                     <% }) %>
                 </select>
                 <small class="text-danger"><%= locals.errors && errors.genre_id ? errors.genre_id.msg :null %></small>

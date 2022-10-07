@@ -10,6 +10,8 @@
     <br>
     <p>NAME: <%= genres.name %> </p>
     <p>RANKIG: <%= genres.ranking %> </p>
-
+    <br/> 
+    <button class="btn btn-primary"><a  class="link-light" href="/genres/edit/<%= genres.id%>">Editar Genero</a></button>
+    <button class="btn btn-danger"><a  class="link-light" href="/genres/delete/<%= genres.id%>">Eliminar Genero</a></button>
 </body>
 </html>

@@ -6,10 +6,14 @@
     <figure>
         <img src="/img/logo-DH.png" alt="Logo Digital House">
     </figure>    
-    <h1><%= actor.first_name %> </h1>
+    <h1><%= actor.first_name %> <%= actor.last_name %></h1>
     <br>
-    <p>NAME: <%= actor.first_name %> </p>
-    <p>RATING: <%= actor.rating %> </p>
-
+    <p>NOMBRE: <%= actor.first_name %> </p>
+    <p>APELLIDO: <%= actor.last_name %></p>
+    <p>RAITING: <%= actor.rating %> </p>
+    <br/>
+    <br/>
+    <button class="btn btn-primary"><a  class="link-light" href="/actors/edit/<%= actor.id%>">Editar Actor</a></button>
+    <button class="btn btn-danger"><a  class="link-light" href="/actors/delete/<%= actor.id%>">Eliminar Actor</a></button>
 </body>
 </html>

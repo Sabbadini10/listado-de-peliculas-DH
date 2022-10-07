@@ -7,11 +7,11 @@
     <figure>
         <img src="/img/logo-DH.png" alt="Logo Digital House">
       </figure>
-    <h1>Estas seguro de querer borrar esta película: <%= Movie.title %>???</h1>
+    <h1>Estas seguro de querer borrar esta película: <%= Movie.title %>? &#128556 &#128561</h1>
     
         <form action="/movies/delete/<%= Movie.id %>?_method=DELETE" method="POST">
             <br>
-            <button class="btn btn-primary" type="submit">Borrar la Película</button>
+            <button class="btn btn-danger" type="submit">Borrar la Película</button>
             
             <button type="submit" class="btn btn-primary"><a  class="link-light" href="/movies">Listado de Películas</a></button>
 

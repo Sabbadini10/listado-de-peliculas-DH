@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include('./partials/head.ejs') %> 
+    <%- include('./partials/header.ejs') %> 
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+      </figure>
+    <h1>Estas seguro de querer borrar esta Genero: <%= Genre.name %>? &#128556 &#128561</h1>
+    
+        <form action="/genres/delete/<%= Genre.id %>?_method=DELETE" method="POST">
+            <br>
+            <button class="btn btn-danger" type="submit">Borrar el Genero</button>
+            
+            <button type="submit" class="btn btn-dark"><a  class="link-light" href="/genres">Listado de Generos</a></button>
+
+        </form>
+    
+</body>
+
+</html>

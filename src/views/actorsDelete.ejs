@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include('./partials/head.ejs') %> 
+    <%- include('./partials/header.ejs') %> 
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+      </figure>
+    <h1>Estas seguro de querer borrar al Actor: <%= Actor.first_name %> <%= Actor.last_name %>? &#128556 &#128561</h1>
+    
+        <form action="/actors/delete/<%= Actor.id %>?_method=DELETE" method="POST">
+            <br>
+            <button class="btn btn-danger" type="submit">Borrar el Actor</button>
+            
+            <button type="submit" class="btn btn-dark"><a  class="link-light" href="/actors">Listado de Actores</a></button>
+
+        </form>
+    
+</body>
+
+</html>

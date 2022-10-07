@@ -7,14 +7,21 @@
     <figure>
         <img src="/img/logo-DH.png" alt="Logo Digital House">
       </figure>
-    <h1>LISTADO DE ACTORES</h1>
-    <ul>
+      <h1>AGREGAR ACTOR</h1> <br> <button class="btn btn-primary"><a  class="link-light" href="/actors/add">Agregar Actor</a></button> <br> <br> 
+      <h1>LISTADO DE ACTORES</h1>
+    <ul class="list-group" style="width: 100%;">
         <% for( let i = 0; i < actors.length; i++ ) { %>
-        <li>
-            <a href="/actors/detail/<%= actors[i].id %>"><%= actors[i].first_name %> <%= actors[i].last_name %></a>
+        <li class="list-group-item">
+            <a href="/actors/detail/<%= actors[i].id %>">
+            <% if (actors[i].movies[0]) { %>
+                <%= actors[i].first_name %> <%= actors[i].last_name %> - <%= actors[i].movies[0].title %>
+                   
+                        <% } else { %>
+                            <%= actors[i].first_name %> <%= actors[i].last_name %> - No tiene pelicula &#128557                      
+                            <% } %>
         </li>
         <% } %>
-
+    </a>
     </ul>
 </body>
 

@@ -45,7 +45,14 @@ Movie.associate= function(models) {
        as: 'genres',
        foreignKey : 'genre_id'
    })
-}
 
+Movie.belongsToMany(models.Actor,{
+    as: 'actors',
+    through: 'actor_movie',
+    foreingKey: 'movie_id',
+    otherKey: 'actor_id',
+    timestamps: false
+})
+}
     return Movie
 }

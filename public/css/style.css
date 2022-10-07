@@ -6,14 +6,27 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 100%;
+}
+
+li {
+  list-style: none;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
 }
+
+a:hover {
+  color: cyan;
+}
+
 img{
   width: 100%;
 }
+
 figure{
   width: 20%;
 }

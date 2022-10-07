@@ -7,10 +7,11 @@
     <figure>
         <img src="/img/logo-DH.png" alt="Logo Digital House">
       </figure>
-    <h1>LISTADO DE GENEROS</h1>
-    <ul>
+      <h1>AGREGAR GENERO</h1> <br> <button class="btn btn-primary"><a  class="link-light" href="/genres/add">Agregar Genero</a></button> <br> <br> 
+      <h1>LISTADO DE GENEROS</h1>
+    <ul class="list-group" style="width: 100%;">
         <% for( let i = 0; i < genres.length; i++ ) { %>
-        <li>
+        <li class="list-group-item">
             <a href="/genres/detail/<%= genres[i].id %>"><%= genres[i].name %></a>
         </li>
         <% } %>

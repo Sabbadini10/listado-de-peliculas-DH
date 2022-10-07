@@ -6,7 +6,8 @@ const Op = db.Sequelize.Op;
 module.exports = {
   list: (req, res) => {
     db.Movie.findAll(
-      {include: [{association: 'genres'}]}
+      {include: [{association: 'genres'}],
+    order: [['title', 'ASC']]}
     )
       .then((movies) => {
         return res.render("moviesList", {
